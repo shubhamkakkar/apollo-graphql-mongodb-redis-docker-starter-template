@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  apollo-graphql-redis-docker:
+    container_name: redis
+    image: redis:5.0
+    volumes:
+      - ./apollo-graphql-redis-docker:/data:cached
+    ports:
+      - 6379:6379
+  apollo-graphql-mongodb-docker:
+    container_name: mongodb
+    image: mongo:latest
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: rootpassword
+    volumes:
+      - ./apollo-graphql-mongodb-docker:/data:cached
+    ports:
+      - 27017:27017
+    working_dir: /var/lib/mongodb
