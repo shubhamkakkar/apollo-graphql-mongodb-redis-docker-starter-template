@@ -1,7 +1,7 @@
 export default [
-    /*
-    * export graphql resolvers
-    * example
-    *  userResolver
-    * */
+  /*
+   * export graphql resolvers
+   * example
+   *  userResolver
+   * */
 ];
