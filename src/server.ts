@@ -5,6 +5,7 @@ import bodyParser from 'body-parser';
 import resolvers from 'src/resolvers';
 import context from 'src/context';
 import typeDefs from 'src/typeDefs';
+import constants from 'src/constants';
 
 export default function server() {
   const expressApp = express();
@@ -15,7 +16,7 @@ export default function server() {
     context,
   });
   apolloServer.applyMiddleware({ app: expressApp });
-  const port = Number(process.env.PORT) || 4001;
+  const port = Number(constants.PORT);
   expressApp.listen(port, '0.0.0.0', () => {
     console.log(`Server up and running on port ${port}`);
   });

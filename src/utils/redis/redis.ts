@@ -21,5 +21,5 @@ const get = async (key: string) => {
 export default {
   client: store,
   get,
-  set: (key:string, data:any) => promisify(store.set).bind(store)(key, JSON.stringify(data)),
+  set: async (key:string, data:any) => await promisify(store.set).bind(store)(key, JSON.stringify(data)),
 };
